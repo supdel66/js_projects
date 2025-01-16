@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    51 closure remaining 
+    <div id="mouseevents">
+        Click me
+    </div>
+
+    <div id="calculator">
+        <input id="input" readonly>
+        <div id="keys">
+            <button onclick="appendtoinput('+')">+</button>
+            <button onclick="appendtoinput('7')">7</button>
+            <button onclick="appendtoinput('8')">8</button>
+            <button onclick="appendtoinput('9')">9</button>
+            <button onclick="appendtoinput('-')">-</button>
+            <button onclick="appendtoinput('4')">4</button>
+            <button onclick="appendtoinput('5')">5</button>
+            <button onclick="appendtoinput('6')">6</button>
+            <button onclick="appendtoinput('*')">*</button>
+            <button onclick="appendtoinput('1')">1</button>
+            <button onclick="appendtoinput('2')">2</button>
+            <button onclick="appendtoinput('3')">3</button>
+            <button onclick="appendtoinput('/')">/</button>
+            <button onclick="appendtoinput('0')">0</button>
+            <button onclick="appendtoinput('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="clearinput()">C</button>
+            
+        </div>
+    </div>    
+
+    
+    <div id="Stopwatch">
+        <h1>Stopwatch</h1>
+        <div id="display">00:00:00:00</div><br>
+        <div id="controls">
+        <button id="start" onclick="startstopwatch()">Start</button>
+        <button id="stop" onclick="stopstopwatch()">Stop</button>
+        <button id="reset" onclick="resetstopwatch()">Reset</button> 
+        </div>
+    </div>
+
+    <div id="DigitalClockProgram">
+        <div id="clock">00:00:00 </div>
+    </div>
+
+    <div id="getdate">
+        <h1>Getting Current Date</h1>
+        <button onclick="getdate()">Get Date</button>
+        <strong><p id="date"></p></strong>
+    </div>
+
+
+
+    <div id="Timeout">
+        <h1>Timeout</h1>
+        <button onclick="starttimer()">START</button>
+    </div>
+
+    
+<div id="shufflethecards">
+    <h1>Shuffle cards</h1>
+    <input type="number" id="length"> Enter players 
+    <div id="player"></div>
+    
+    <button id="cardsumbit" onclick="shufflecards()">Shuffle</button>
+</div>
+
+
+
+<div id="randompasswordgenerator">
+    <h1>Random Password Generator</h1>
+    <input type="number" id="number" value="0"> Enter the password length<br><br>
+    <button id="Numbersubmit">Submit</button><br>
+    <p id="passwordresult"></p>
+</div>
+
+
+
+<div id="restspread">
+    <h1>Rest and Spread Operator</h1>
+    <input type="text" id="namee"> Enter your name<br><br>
+    <button id="Namesubmit">Submit</button><br>
+    <p id="nameresult"></p>
+</div>
+
+    <div id="conversiondiv">
+        <h1>Temperature conversion</h1>
+        <input type="number" value="0" id="input">
+<br><br>
+        <input type="radio" name="temp" id="celtofar">
+        <label for="celtofar">Celsius to Farenheit</label> 
+     <br>
+       <input type="radio" name="temp" id="fartocel">
+       <label for="fartocel">Farenheit to celsius</label> <br>
+      <br>
+       <button id="submit">submit</button>
+       <p id="result"> </p>
+        
+
+    </div>
+
+
+  <div id="carddiv">
+    <h1>Card Radio button</h1>
+   <input type="checkbox" id="mycheckbox">
+   <label for="mycheckbox">Subscribe</label> <br><br>
+   <input type="radio" id ="visabtn" name="card">
+    <label for="visabtn">Visa</label><br>
+    <input type="radio" id ="mastercardbtn"name="card">
+    <label for="mastercardbtn">Mastercard button</label><br>
+    <input type="radio" id ="paypalbtn" name="card">
+    <label for="paypalbtn">Paypal</label><br>
+    
+    <br>
+    <button id="btn">Submit</button>
+
+    <p id="subresult"></p>
+    <p id="payresult"></p>
+</div>
+    <script src="app.js"></script>    
+</body>
+</html>
+
+

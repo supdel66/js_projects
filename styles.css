@@ -1,0 +1,161 @@
+#mouseevents{
+    box-sizing: content-box;
+    height:20px;
+    width:150px;
+    margin:20px;
+    align-items: center;
+    justify-content: center;
+    background-color: cadetblue;
+}
+
+
+#keys{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr); /* 5 columns of equal width */
+    grid-template-rows: repeat(5, 70px); /* 4 rows with a fixed height of 100px */
+    width: 10%; /* Full width of the container */
+}
+#calculator{
+    background-color:rgb(227, 231, 172)
+    ;width:240px
+    ;padding:10px;
+}
+
+#calculator input{
+    width:220px;
+    margin-bottom: 10px;
+    font-size:1.2rem;
+
+}
+
+#calculator button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 calc(20% -10px);
+    width:50px;
+    height:50px;
+    border-radius: 10px;
+    border:none;
+    background-color: beige;
+    font-size: 1rem;
+    margin:4px
+    ; font-weight: 700;
+    cursor:pointer;
+}
+
+
+
+
+
+#DigitalClockProgram{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    padding:10px;
+    border-radius: 3px;
+    border-style: dashed;
+    background-color: rgb(228, 149, 117);
+    margin:20px;
+}
+
+
+#clock{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+
+#Stopwatch{
+    padding:10px;
+    border-radius: 3px;
+    border-style: dashed;
+    background-color: rgb(120, 208, 219);
+    margin:20px;
+}
+
+#display{
+    align-items: center;
+    font-weight: bold;
+    font-size: x-large;
+
+}
+#start,#stop,#reset{
+    background-color: rgb(229, 158, 158);
+
+    box-shadow: brown;
+}
+
+#conversiondiv{
+    padding:10px;
+    border-radius: 3px;
+    border-style: dashed;
+    background-color: rgb(195, 119, 196);
+    margin:20px;
+}
+
+#carddiv{
+    padding:10px;
+    border-radius: 3px;
+    border-style: dashed;
+    background-color: rgb(50, 141, 187);
+    margin:20px;
+}
+
+#restspread{
+    padding:10px;
+    border-radius: 3px;
+    border-style: dashed;
+    background-color: rgb(229, 121, 139);
+    margin:20px;
+}
+
+#randompasswordgenerator{
+    padding:10px;
+    border-radius: 3px;
+    border-style: dashed;
+    background-color: rgb(213, 189, 111);
+    margin:20px;
+}
+
+#shufflethecards{
+    padding:10px;
+    border-radius: 3px;
+    border-style: dashed;
+    background-color: rgb(111, 213, 210);
+    margin:20px;
+}
+
+#getdate{
+    padding:10px;
+    border-radius: 3px;
+    border-style: dashed;
+    background-color: rgb(213, 111, 130);
+    margin:20px;
+}
+
+#Timeout{
+    padding:10px;
+    border-radius: 3px;
+    border-style: dashed;
+    background-color: rgb(172, 137, 212);
+    margin:20px;
+}
+
+#Timeout{
+    padding:10px;
+    border-radius: 3px;
+    border-style: dashed;
+    background-color: rgb(172, 137, 212);
+    margin:20px;
+}
+
+.player{
+    background-color: lightblue;
+      margin:10px;
+      padding:6px;
+    border-radius: 2%;
+    
+}
