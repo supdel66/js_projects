@@ -1,3 +1,40 @@
+//image slider
+const slides=document.querySelectorAll('.slides img');
+let slideindex=0;
+let intervalid=null;
+console.log(slides[slideindex])
+
+initializeslider();
+
+function initializeslider(){
+console.log('initialzeslider')
+slides[slideindex].style.display ='block'
+}
+
+function showslide(index){
+slides.forEach((slide)=>{
+    slide.style.display='none';
+})
+slides[index].style.display='block';
+}
+function prevslide(){
+    slideindex--;
+    if(slideindex<0){
+        slideindex=slides.length-1;
+       }
+    showslide(slideindex);
+
+}
+function nextslide(){
+   slideindex++;
+   if(slideindex>=slides.length){
+    slideindex=0;
+   }
+   showslide(slideindex);
+}
+
+
+
 //calculator program
 const displayy= document.getElementById('input');
 console.log(displayy)
@@ -664,3 +701,239 @@ mouseevents.addEventListener('mouseout',()=>mouseevents.textContent
 //eventlistener
 document.addEventListener('keydown',(event)=>mouseevents.textContent
 =  `${event.key} was pressed`)
+
+
+
+//hideshow element
+// Hide/Show element
+const Mybutton = document.getElementById('Mybutton');
+const box = document.getElementById('boxxx');
+let isvisible = true;
+
+Mybutton.addEventListener('click', (event) => {
+    if (isvisible) {
+        box.style.display = 'none'; // Hide the element
+        Mybutton.textContent = "Show";
+        isvisible = false; // Update the state
+    } else {
+        box.style.display = 'block'; // Show the element
+        Mybutton.textContent = "Hide";
+        isvisible = true; // Update the state
+    }
+});
+
+
+//classlist
+// const mybutton= document.getelementbyid();
+// Mybutton,addeventlistener('click',(e)=>{
+//     e.target.classlist.toggle('hove')
+//     e.target.classlist.replace('enabble','disabled') 
+//     if(e.target.classlist.contains('disabled')){ condition}
+// })
+
+
+
+//callbackhell
+// function task1(callback){
+//     setTimeout(console.log('task 1'),1000);
+//     callback();
+// }
+// function task2(callback){
+//     console.log('task 2')
+//     callback();
+// }
+// function task3(callback){
+//     console.log('task 3')
+//     callback();
+// }
+
+// task1(()=>{
+//     task2(()=>{
+//         task3(()=>{
+//             console.log('all tasks completed')
+//         })
+//     })
+// })
+
+console.log(34)
+//asynawait
+let dog=!false
+function task1(){
+    return new Promise((resolve,reject)=>{
+
+        setTimeout(()=>{
+            if(dog){      
+    resolve('task 1');
+            }
+            else{
+                reject
+                ('no task 1')
+            }
+        },1000);
+
+    })}
+function task2(){
+    
+    return new Promise((resolve,reject)=>{
+
+        setTimeout(()=>{
+            if(dog){      
+    resolve('task 2');
+            }
+            else{
+                reject
+                ('no task 1')
+            }
+        },1000);
+})}
+function task3(){
+    
+    return new Promise((resolve,reject)=>{
+
+        setTimeout(()=>{
+            if(dog){      
+    resolve('task 3');
+            }
+            else{
+                reject
+                ('no task 1')
+            }
+        },1000);
+    })
+}
+
+async function alltasks(){
+try{
+    const task1result=await task1();
+    console.log(task1result);
+
+    const task2result=await task2();
+    console.log(task2result);
+
+    const task3result=await task3();
+    console.log(task3result);
+
+    console.log('alltasks done')
+}
+catch(error){
+    
+}
+}
+alltasks();
+
+
+//JSON FILES
+// JSON.stringify()=> converts a js object to a JSON File
+// JSON.parse() => converts a JSON string to a js objrcts
+
+
+//fetch
+// fetch("https://pokeapi.co/api/v2/pokemon/pikachu").then(response=>response.json()).then(data=>console.log(data))
+// .catch(error=>console.log(error));
+
+async function fetchData(){
+    try{
+
+        const pokemonName=document.getElementById("pokemonName").value.toLowerCase();
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+
+    if (!response.ok){
+        throw new Error("could not fetch resource")
+    }    
+    const data = await response.json();
+    const pokemonSprite= data.sprites.front_default;
+    const imageElement=document.getElementById('pokemonSprite');
+    imageElement.src=pokemonSprite;
+    imageElement.style.display="block";
+}
+    catch(error){
+        console.log(error)
+
+    }
+}
+
+
+//weatherapi
+
+const weatherForm=document.querySelector('.weatherForm')
+const cityInput= document.querySelector('.cityInput')
+const card= document.querySelector('.card')
+const apikey="f9934dde59715442ee82b54e56913a4b"
+
+weatherForm.addEventListener("submit", async event=>{
+    event.preventDefault();
+   console.log('in add event')
+   const city = cityInput.value;
+    if(city){
+        try{
+            const weatherData= await getWeatherData(city);
+            displayWeather(weatherData)
+        }
+        catch(error){
+            displayError(error)
+        }
+        
+    }
+    else{
+        displayError("no city");
+    }
+})
+
+async function getWeatherData(city){
+const apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`
+const response = await fetch(apiUrl);
+if(!response.ok){
+    throw new Error('Couldnt fetch data')
+}
+return await response.json()
+;}
+
+function displayWeather(data){
+const {name:city,main:{temp,humidity},weather:[{description,id}]}=data;
+card.textContent=''
+card.style.display='flex'
+
+const cityDisplay=document.createElement('p');
+const tempDisplay=document.createElement('p');
+const humidityDisplay=document.createElement('p');
+const descriptionDisplay=document.createElement('p');
+const emoji=getWeatherEmoji(id)
+
+cityDisplay.textContent = `${city}\nTemperature: ${temp}K\nHumidity: ${humidity}%\n${description} ${emoji}`;
+cityDisplay.innerHTML = cityDisplay.textContent.replace(/\n/g, "<br>");
+
+
+cityDisplay.classList.add("weatherdisplayy")
+
+card.appendChild(cityDisplay)
+
+}
+
+function getWeatherEmoji(weatherId) {
+    switch(true) {
+        case (weatherId >= 200 && weatherId < 300):
+            return "⛈️";
+        case (weatherId >= 300 && weatherId < 400):
+            return "🌧️";
+        case (weatherId >= 500 && weatherId < 600):
+            return "🌦️";
+        case (weatherId >= 600 && weatherId < 700):
+            return "❄️";
+        case (weatherId >= 700 && weatherId < 800):
+            return "🌫️";
+        case (weatherId === 800):
+            return "☀️";
+        case (weatherId >= 801 && weatherId < 810):
+            return "☁️";
+        default:
+            return "❓";
+    }
+}
+
+function displayError(message){
+    const errorDisplay= document.createElement('p');
+    errorDisplay.textContent=message;
+    card.textContent=''
+    card.style.display="flex";
+    card.appendChild(errorDisplay);
+}

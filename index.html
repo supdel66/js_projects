@@ -7,12 +7,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    51 closure remaining 
-    <div id="mouseevents">
-        Click me
+
+
+    <div id="weatherapi">
+        <h1>Weather API</h1>
+ <form class="weatherForm">
+    <input type="text" placeholder="Enter city" class="cityInput">
+    <button type="submit">Get Weather</button>
+ </form>
+ <div class="card"></div>
     </div>
+ 
+
+<div id="pokemonfetch">
+    <h1>Pokemon Fetch</h1>
+    <input type="text" id="pokemonName" placeholder="
+    Enter pokemon name">
+    <button onclick="fetchData()">Fetch Pokemon</button>
+    <img src="" alt="PokemonSprite" id="pokemonSprite" style="display:none">
+    
+
+</div>
+   
+
+  <div id="slider">
+    <h1>Image Slider</h1>
+    <div class="slides">
+        <img class="slide" src="picture1.jpg" alt="Picture1">
+        <img class="slide" src="picture2.jpg" alt="Picture2">
+        <img class="slide" src="picture3.jpg" alt="Picture3">
+    </div>
+    <button class="prev" onclick="prevslide()">&#10094</button>
+    <button class="next" onclick ="nextslide()">&#10095</button>
+  </div>
+
 
     <div id="calculator">
+        <h1>Calculator</h1>
         <input id="input" readonly>
         <div id="keys">
             <button onclick="appendtoinput('+')">+</button>
@@ -125,6 +156,25 @@
     <p id="subresult"></p>
     <p id="payresult"></p>
 </div>
+
+
+
+
+<br><br>
+    51 closure remaining 
+   <br><br>
+    <button id="Mybutton">Hide</button>
+    <div id="boxxx">
+
+    </div>
+
+
+
+    <div id="mouseevents">
+        Click me
+    </div>
+
+    
     <script src="app.js"></script>    
 </body>
 </html>

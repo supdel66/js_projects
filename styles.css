@@ -1,161 +1,175 @@
-#mouseevents{
-    box-sizing: content-box;
-    height:20px;
-    width:150px;
-    margin:20px;
-    align-items: center;
-    justify-content: center;
-    background-color: cadetblue;
-}
-
-
-#keys{
-    display:grid;
-    grid-template-columns: repeat(4, 1fr); /* 5 columns of equal width */
-    grid-template-rows: repeat(5, 70px); /* 4 rows with a fixed height of 100px */
-    width: 10%; /* Full width of the container */
-}
-#calculator{
-    background-color:rgb(227, 231, 172)
-    ;width:240px
-    ;padding:10px;
-}
-
-#calculator input{
-    width:220px;
-    margin-bottom: 10px;
-    font-size:1.2rem;
-
-}
-
-#calculator button{
+/* General styling for uniformity */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: hsl(0, 0%, 95%);
+    margin: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex: 0 0 calc(20% -10px);
-    width:50px;
-    height:50px;
+    color: #333;
+}
+
+/* Global card-like section styling */
+#weatherapi, .card, #slider, #mouseevents, #boxxx, #DigitalClockProgram, #Stopwatch, #conversiondiv, 
+#carddiv, #restspread, #randompasswordgenerator, #pokemonfetch, #shufflethecards, #getdate, #Timeout {
+    padding: 40px;
     border-radius: 10px;
-    border:none;
-    background-color: beige;
-    font-size: 1rem;
-    margin:4px
-    ; font-weight: 700;
-    cursor:pointer;
+    
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.card{
+    display: none;
+}
+
+/* Specific section colors */
+#slider{
+    background-color: rgb(239, 173, 129);
+
 }
 
 
+#weatherapi{
+    background-color: rgb(159, 226, 231);
+}
 
+#pokemonfetch{
+    background-color: rgb(238, 161, 201);  
+}
 
-
-#DigitalClockProgram{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid;
-    padding:10px;
-    border-radius: 3px;
-    border-style: dashed;
+#DigitalClockProgram {
     background-color: rgb(228, 149, 117);
-    margin:20px;
+    text-align: center;
 }
 
+#Stopwatch {
+    background-color: rgb(120, 208, 219);
+}
 
-#clock{
+#conversiondiv {
+    background-color: rgb(195, 119, 196);
+}
+
+#carddiv {
+    background-color: rgb(50, 141, 187);
+}
+
+#restspread {
+    background-color: rgb(229, 121, 139);
+}
+
+#randompasswordgenerator {
+    background-color: rgb(213, 189, 111);
+}
+
+#shufflethecards {
+    background-color: rgb(111, 213, 210);
+}
+
+#getdate {
+    background-color: rgb(213, 111, 130);
+}
+
+#Timeout {
+    background-color: rgb(172, 137, 212);
+}
+
+/* Weather display styling */
+.weatherdisplayy {
+    font-size: 1.2rem;
+    text-align: left;
+    background: linear-gradient(135deg, #cce7ff, #eaf9ff);
+    padding: 30px;
+    border-radius: 15px;
+    line-height: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    width: fit-content;
+}
+
+/* Digital clock appearance */
+#clock {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: x-large;
+    font-size: 2rem;
+    text-align: center;
+    color: #222;
 }
 
-
-#Stopwatch{
-    padding:10px;
-    border-radius: 3px;
-    border-style: dashed;
-    background-color: rgb(120, 208, 219);
-    margin:20px;
+/* Calculator styling */
+#calculator {
+    background-color: rgb(227, 231, 172);
+    width: 300px;
+    padding: 20px;
+    padding-right: 10px;
+    border-radius: 10px;
+    margin: 20px;
+    border: 2px dashed rgba(0, 0, 0, 0.2);
 }
 
-#display{
-    align-items: center;
-    font-weight: bold;
-    font-size: x-large;
-
+#calculator input {
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
-#start,#stop,#reset{
+
+#calculator button {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: beige;
+    font-size: 1rem;
+    margin: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Slider improvements */
+#slider img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+img.displayslide {
+    display: block;
+}
+
+/* Buttons */
+#start, #stop, #reset {
     background-color: rgb(229, 158, 158);
-
-    box-shadow: brown;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    margin: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-#conversiondiv{
-    padding:10px;
-    border-radius: 3px;
-    border-style: dashed;
-    background-color: rgb(195, 119, 196);
-    margin:20px;
-}
-
-#carddiv{
-    padding:10px;
-    border-radius: 3px;
-    border-style: dashed;
-    background-color: rgb(50, 141, 187);
-    margin:20px;
-}
-
-#restspread{
-    padding:10px;
-    border-radius: 3px;
-    border-style: dashed;
-    background-color: rgb(229, 121, 139);
-    margin:20px;
-}
-
-#randompasswordgenerator{
-    padding:10px;
-    border-radius: 3px;
-    border-style: dashed;
-    background-color: rgb(213, 189, 111);
-    margin:20px;
-}
-
-#shufflethecards{
-    padding:10px;
-    border-radius: 3px;
-    border-style: dashed;
-    background-color: rgb(111, 213, 210);
-    margin:20px;
-}
-
-#getdate{
-    padding:10px;
-    border-radius: 3px;
-    border-style: dashed;
-    background-color: rgb(213, 111, 130);
-    margin:20px;
-}
-
-#Timeout{
-    padding:10px;
-    border-radius: 3px;
-    border-style: dashed;
-    background-color: rgb(172, 137, 212);
-    margin:20px;
-}
-
-#Timeout{
-    padding:10px;
-    border-radius: 3px;
-    border-style: dashed;
-    background-color: rgb(172, 137, 212);
-    margin:20px;
-}
-
-.player{
+.player {
     background-color: lightblue;
-      margin:10px;
-      padding:6px;
-    border-radius: 2%;
-    
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5%;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Weather form */
+.weatherForm {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
